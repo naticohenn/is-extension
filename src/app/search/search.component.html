@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+  <form>
+      <div class="input-group mb-3 inputAndBtn">
+       <input  type="search" placeholder="Search..." class="searchInput" onfocus="this.placeholder = ''" (keyup.enter)="searchRedirect()" [formControl]="searchForm" aria-describedby="basic-addon2" (ngModelChange)="autosuggestOnChange()">
+          <button class="btn btn-primary searchBtn" (click)="searchRedirect()" type="button"><i class="fa fa-search"></i></button>
+      </div>    
+  </form>
+        <div class="emptyErr">
+        {{emptyInputErr}}
+        </div>  
+  <div class="list-group" *ngFor="let suggestItem of suggestData" (click)="selectedSuggest(suggestItem)" style="width: 40%">
+      <a href="#" class="list-group-item list-group-item-action suggestBox" *ngIf="suggestList">
+          {{suggestItem}}
+      </a>
+  </div>
+</div>

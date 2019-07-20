@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "IS Extension",
+    "version": "1.0.0",
+    "chrome_url_overrides" :{
+      "newtab": "index.html"
+    },
+    "description": "Search extension",
+    "permissions": ["tabs", "background"],
+    "browser_action": {},
+    "background":{
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "icons": {
+      "16": "search.png",
+      "48": "search.png",
+     "128": "search.png" },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  }
+  
